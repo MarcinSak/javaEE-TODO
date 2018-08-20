@@ -19,10 +19,9 @@
 						<td></td>
 						<td>${todo.name}</td>
 						<td>${todo.category}</td>
-						<td style="">
+						<td style="" align="right">
+							<a class="btn btn-outline-success" href="/done-todo.do?id-todo=${todo.id}">done</a>
 							<a class="btn btn-outline-danger" href="/delete-todo.do?id-todo=${todo.id}">Delete</a>
-							<a class="btn btn-outline-success" href="#">done</a>
-							<a class="btn btn-outline-warning" href="#">cancel</a>
 						</td>
 						
 					</tr>
