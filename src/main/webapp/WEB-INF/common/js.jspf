@@ -1,0 +1,5 @@
+<style>
+	function validateDescriptionInput(text){
+		return text.trim();
+	}
+</style>
