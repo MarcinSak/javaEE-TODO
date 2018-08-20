@@ -1,29 +1,30 @@
 <%@ include file="../common/add-all" %>
 
 	<div class="container">
-		Your New Action Item:
+		<h5 style="text-align: center; margin:25px;">New Action</h5>
 		<form action="/add-todo.do" method="post">
 			<fieldset class="form-group">
-				<label>Description</label>
-				<input type="text" name="new-todo" class="form-control"/> <br />
+				<input placeholder="Please type descripton here..." type="text" style="color: gray" name="new-todo" class="form-control"/> <br />
 			
-				<div class="dropdown">
-  					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" 
+				<div class="dropdown input-group mb-4">
+  					<select name= "new-todo-category" class="btn btn-outline-secondary form-control dropdown-toggle" id="dropdownMenu2" 
   							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    				Category
-  					</button>
-  					<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-  					
   					<c:forEach items="${categotyList}" var="category">
-					    <button class="dropdown-item" type="button">${category.name}</button>
-					</c:forEach>    
-				  </div>
+					    <option style="background-color: white;" class="dropdown-item">${category.name}</option>
+					</c:forEach>
+  					</select>
+  					<div class="input-group-append">
+  						<input type="button" value="Add category" style="width: 130px; margin-left:5px;" class="btn btn-outline-secondary">
+  					</div> 
 				</div>
 			</fieldset>
+
+  
 			<fieldset class="form-input-buttons-group">
 				<input class="btn btn-success" type="submit" name="action" value="Add" />
 				<input class="btn btn-warning" type="submit" name="action" value="Cancel" />
 			</fieldset>
+			
 		</form>
 		
 	</div>
