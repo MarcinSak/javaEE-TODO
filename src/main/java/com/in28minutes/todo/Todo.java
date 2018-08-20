@@ -5,12 +5,14 @@ public class Todo
 	private String name;
 	private int id;
 	private String category;
+	private Boolean state;
 	
 	public Todo(String name, int id, String category) {
 		super();
 		this.name = name;
 		this.id = id;
 		this.category = category;
+		this.state =true;
 	}
 	
 	public String getCategory()
@@ -33,14 +35,10 @@ public class Todo
 		this.id = id;
 	}
 
-
-
 	public String getName()
 	{
 		return name;
 	}
-
-	
 
 	public void setName(String name)
 	{
@@ -48,11 +46,20 @@ public class Todo
 	}
 
 
+	public Boolean getState()
+	{
+		return state;
+	}
+	
+	public void setState(Boolean newState)
+	{
+		this.state = newState;
+	}
 
 	@Override
 	public String toString()
 	{
-		return String.format("Todo [name=%s, id=%s, category=%s]", name, id, category);
+		return "Todo [name=" + name + ", id=" + id + ", category=" + category + ", state=" + state + "]";
 	}
 
 	@Override
@@ -60,7 +67,10 @@ public class Todo
 	{
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((category == null) ? 0 : category.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		return result;
 	}
 
@@ -74,13 +84,30 @@ public class Todo
 		if (getClass() != obj.getClass())
 			return false;
 		Todo other = (Todo) obj;
+		if (category == null)
+		{
+			if (other.category != null)
+				return false;
+		} else if (!category.equals(other.category))
+			return false;
+		if (id != other.id)
+			return false;
 		if (name == null)
 		{
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (state == null)
+		{
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
 		return true;
 	}
+
+	
+
 	
 }

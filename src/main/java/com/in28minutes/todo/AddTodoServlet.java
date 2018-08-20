@@ -32,8 +32,6 @@ public class AddTodoServlet extends HttpServlet
 			String newTodo = request.getParameter("new-todo");
 			String category = request.getParameter("new-todo-category");
 			String qwer = request.getParameter("qwer");
-			System.out.println("category ---> " + category);
-			System.out.println("qwer ---> " + qwer);
 			todoService.addTodo(new Todo(newTodo, todoService.nextID(), category));
 		}
 		response.sendRedirect("/list-todos.do");

@@ -7,14 +7,33 @@ public class TodoService
 {
 	private int todoID=4;
 	private static List<Todo> todos = new ArrayList<Todo>();
+	private static List<Todo> todosForAnswer = new ArrayList<Todo>();
+
 	static {
 		todos.add(new Todo("Learn Web Application Development", 1, "Study"));
 		todos.add(new Todo("Learn Spring MVC", 2, "Study"));
 		todos.add(new Todo("Learn Rest Services", 3, "Study"));
 	}
+
+	public List<Todo> retriveActiveTodos(){
+		todosForAnswer.clear();
+		for(Todo todo: todos) {
+			if(todo.getState() == true)
+				todosForAnswer.add(todo);
+		}
+		return todosForAnswer;
+	}
 	
-	public List<Todo> retriveTodos(){
-		return todos;
+	public List<Todo> retriveNonActiveTodos(){
+		todosForAnswer.clear();
+		for(Todo todo: todos) {
+			if(todo.getState() == false)
+				todosForAnswer.add(todo);
+		}
+		return todosForAnswer;
+	}
+	public List<Todo> retriveAllTodos(){
+		return todosForAnswer;
 	}
 	public void addTodo(Todo todo) {
 		this.todoID++;
@@ -24,6 +43,13 @@ public class TodoService
 		for(Todo t: todos) 
 			if(t.getId() == id) {
 				todos.remove(t);
+				break;
+			}
+	}
+	public void checkOutTodo(int id) {
+		for(Todo t: todos) 
+			if(t.getId() == id) {
+				todos.get(id).setState(false);
 				break;
 			}
 	}
