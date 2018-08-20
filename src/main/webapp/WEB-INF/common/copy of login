@@ -1,0 +1,7 @@
+		<div class="login">
+			<form action="/login.do" method="post">
+				Enter your name    <input type="text" name="name"/> <br />
+				Type password <input type="password" name="password"/> <br />
+				<input class="btn btn-outline-secondary" type="submit" value="Login"/>
+			</form>
+		</div>
