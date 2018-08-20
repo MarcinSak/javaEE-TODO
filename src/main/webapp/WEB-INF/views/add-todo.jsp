@@ -4,7 +4,7 @@
 		<h5 style="text-align: center; margin:25px;">New Action</h5>
 		<form action="/add-todo.do" method="post">
 			<fieldset class="form-group">
-				<input placeholder="Please type descripton here..." type="text" style="color: gray" name="new-todo" class="form-control"/> <br />
+				<input required="required" placeholder="Please type descripton here..." type="text" style="color: gray" name="new-todo" class="form-control"/> <br />
 			
 				<div class="dropdown input-group mb-4">
   					<select name= "new-todo-category" class="btn btn-outline-secondary form-control dropdown-toggle" id="dropdownMenu2" 
