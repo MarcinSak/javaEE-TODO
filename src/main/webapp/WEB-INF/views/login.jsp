@@ -71,7 +71,7 @@ input:focus {
 	    	<input type="text" name="name" placeholder="Username" required="required" title="" />
 	        <input type="password" name="password" placeholder="Password" id="password" required="required" title="" />
 	        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-	        <div class="register"><a href="/register.do">Register</a></a></div>
+	        <div class="register"><a href="/register.do">Register</a></div>
 	        <div class="errorMessageClass">${errorMessage}</div>
 	    </form>
 	</div>

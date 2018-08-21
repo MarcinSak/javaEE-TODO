@@ -35,9 +35,17 @@ public class TodoService
 	public List<Todo> retriveAllTodos(){
 		return todosForAnswer;
 	}
-	public void addTodo(Todo todo) {
-		this.todoID++;
-		todos.add(todo);
+	public Boolean addTodo(Todo todo) {
+		if(!todo.getName().trim().equals("")) {
+			this.todoID++;
+			todos.add(todo);
+			System.out.println("dodano nowe todo");
+			return true;
+		}
+		else {
+			System.err.println("nie dodano nowego todo");
+			return false;
+		}
 	}
 	public void deleteTodo(int id) {
 		for(Todo t: todos) 

@@ -7,13 +7,26 @@ import java.util.Map;
 
 public class CategoryService implements CategoryServiceInterface
 {
-	private static int categoryID = 1;
+	private static int categoryID = 3;
 	private static List<Category> categoryList = new ArrayList<Category>();
 	
 	static {
 		categoryList.add(new Category("root", 0));
 		categoryList.add(new Category("study", 1, 0));
-		categoryList.add(new Category("work", 1, 0));
+		categoryList.add(new Category("work", 2, 0));
+	}
+	
+	public int giveMeID(String sd) {
+//		System.out.print(" jestem");
+//		String[] strings = newCategoryParent.split("(");
+//		System.out.print(" jestem");
+//		int lastSplit = strings.length;
+//		System.out.print(" jestem");
+//		String liczba = newCategoryParent.split("(")[lastSplit].split(")")[0];
+//		System.out.print(" jestem");
+//		int parentId = Integer.parseInt(liczba);
+//		System.out.print(" jestem");
+		return 0;
 	}
 	
 	@Override
@@ -25,13 +38,14 @@ public class CategoryService implements CategoryServiceInterface
 	@Override
 	public void addCategory(String name, int parent)
 	{
-		categoryList.add(new Category(name, categoryID++, parent));
+		categoryList.add(new Category(name, ++categoryID, parent));
 	}
 
 	@Override
 	public void addCategory(String name)
 	{
-		categoryList.add(new Category(name, categoryID++));
+		if(!name.trim().equals(""))
+			categoryList.add(new Category(name.trim(), ++categoryID));
 	}
 
 	@Override

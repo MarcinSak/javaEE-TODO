@@ -66,10 +66,11 @@ public class Category
 			return false;
 		return true;
 	}
+
 	@Override
 	public String toString()
 	{
-		return "Category [name=" + name + ", id=" + id + "]";
+		return "Category [name=" + name + ", id=" + id + ", parentCategoryID=" + parentCategoryID + "]";
 	}
 	
 }

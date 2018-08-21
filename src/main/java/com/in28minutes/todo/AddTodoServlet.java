@@ -29,10 +29,12 @@ public class AddTodoServlet extends HttpServlet
 	{
 		String action = request.getParameter("action");
 		if(action.equals("Add")) {
-			String newTodo = request.getParameter("new-todo");
-			String category = request.getParameter("new-todo-category");
-			String qwer = request.getParameter("qwer");
-			todoService.addTodo(new Todo(newTodo, todoService.nextID(), category));
+			String newTodoDescription = request.getParameter("new-todo");
+			String newTodoCategory = request.getParameter("new-todo-category");
+			if(!todoService.addTodo(new Todo(newTodoDescription, todoService.nextID(), newTodoCategory)))
+				request.setAttribute("AddTodoErrorMessage", "Nie dodano nowego zadania");
+			else
+				request.setAttribute("AddTodoErrorMessage", "");
 		}
 		response.sendRedirect("/list-todos.do");
 	}

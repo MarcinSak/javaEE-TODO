@@ -1,5 +1,5 @@
 <%@ include file="../common/add-all" %>
-
+<%@ include file="../common/newCategoryModal.jspf" %>
 	<div class="container">
 		<br />
 		<h3 style="margin:8px; text-align: center;">New Action</h3>
@@ -7,7 +7,7 @@
 		<br />
 		<form action="/add-todo.do" method="post">
 			<fieldset class="form-group">
-				<input required pattern="[a-z|A-Z|0-9]*" placeholder="Please type description here..." type="text" style="color: gray" name="new-todo" id="inpucik" class="elo form-control"/> <br />
+				<input required placeholder="Please type description here..." type="text" style="color: gray" name="new-todo" id="inpucik" class="elo form-control"/> <br />
 			
 				<div class="dropdown input-group mb-4">
   					<select name= "new-todo-category" class="btn btn-outline-secondary form-control dropdown-toggle" id="dropdownMenu2" 
@@ -17,7 +17,7 @@
 					</c:forEach>
   					</select>
   					<div class="input-group-append">
-  						<input type="button" value="Add category" style="width: 130px; margin-left:5px;" class="btn btn-outline-secondary">
+  						<button style="width:130px; margin-left:5px;" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Add category</button>
   					</div> 
 				</div>
 			</fieldset>
@@ -29,5 +29,7 @@
 			</fieldset>
 			
 		</form>
+	
+		<div class="errorMessageClass">${AddTodoErrorMessage}</div>
 		
 	</div>
