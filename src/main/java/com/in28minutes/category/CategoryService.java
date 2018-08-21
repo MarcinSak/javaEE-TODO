@@ -7,94 +7,43 @@ import java.util.Map;
 
 public class CategoryService implements CategoryServiceInterface
 {
-	private static List<Category> categories = new ArrayList<Category>();
+	private static int categoryID = 1;
+	private static List<Category> categoryList = new ArrayList<Category>();
 	
-	private static int todoID=5;
+	static {
+		categoryList.add(new Category("root", 0));
+		categoryList.add(new Category("study", 1, 0));
+		categoryList.add(new Category("work", 1, 0));
+	}
 	
-	
-	
-
 	@Override
 	public List<Category> getCategories()
 	{
-		CategoryStoredData catData = new CategoryStoredData();
-		return catData.getCategoryList();
+		return categoryList;
 	}
 	
-	
-	
-	
-	
+	@Override
+	public void addCategory(String name, int parent)
+	{
+		categoryList.add(new Category(name, categoryID++, parent));
+	}
 
-		@Override
-		public boolean addCategory(String name)
-		{
-//			if(!isCategoryAlreadyExist(name)) {
-//				todoID++;
-//				categoryMap.put(new Category(name, todoID), null);
-//				return true;
-//			}
-			return false;
-		}
+	@Override
+	public void addCategory(String name)
+	{
+		categoryList.add(new Category(name, categoryID++));
+	}
 
-	
-		@Override
-		public boolean isCategoryAlreadyExist(String name, String parent)
-		{
-//			if(categoryMap.get(name).equals(parent))
-//				return true;
-			return false;
-		}
+	@Override
+	public void deleteCategory(int removeCategoryID)
+	{
+		categoryList.remove(removeCategoryID);
+	}
 
-		@Override
-		public boolean isCategoryAlreadyExist(String name)
-		{
-			if(isCategoryAlreadyExist(name, "root"))
-				return true;
-			return false;
-		}
-
-		@Override
-		public boolean deleteCategory(String name, String parent)
-		{
-//			if(isCategoryAlreadyExist(name, parent)) {
-//				categoryMap.remove(name, parent);
-//				return true;
-//			}
-			return false;
-		}
-
-		@Override
-		public boolean deleteCategory(String name)
-		{
-//			if(isCategoryAlreadyExist(name)) {
-//				categoryMap.remove(name, null);
-//				return true;
-//			}
-			return false;
-		}
-
-		@Override
-		public boolean changeCategoryName()
-		{
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		@Override
-		public boolean addCategory(String name, String parent)
-		{
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-
-		@Override
-		public Map<Category, String> listCategories()
-		{
-			// TODO Auto-generated method stub
-			return null;
-		}
-
+	@Override
+	public void changeCategoryName(int changeCategoryNameID, String newName)
+	{
+		categoryList.get(changeCategoryNameID).setName(newName);
+	}
 
 }

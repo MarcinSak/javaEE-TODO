@@ -6,14 +6,9 @@ import java.util.Map;
 public interface CategoryServiceInterface
 {
 	public List<Category> getCategories();
-	boolean isCategoryAlreadyExist(String name, String parent);
-	public boolean isCategoryAlreadyExist(String name);
-	public boolean addCategory(String name, String parent);
-	public boolean addCategory(String name);
-	public boolean deleteCategory(String name, String parent);
-	public boolean deleteCategory(String name);
-	public boolean changeCategoryName();
-	public Map<Category,String> listCategories();
-	
+	public void addCategory(String name, int parent);
+	public void addCategory(String name);
+	public void deleteCategory(int removeCategoryID);
+	public void changeCategoryName(int changeCategoryNameID, String newName);	
 	
 }

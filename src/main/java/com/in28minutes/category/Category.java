@@ -4,6 +4,23 @@ public class Category
 {
 	private String name;
 	private int id;
+	private int parentCategoryID;
+	
+
+	public Category(String name, int id) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.parentCategoryID = 0;
+	}
+
+	public Category(String name, int id, int parentCategoryID) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.parentCategoryID = parentCategoryID;
+	}
+	
 	public String getName()
 	{
 		return name;
@@ -18,11 +35,6 @@ public class Category
 	}
 	public void setId(int id)
 	{
-		this.id = id;
-	}
-	public Category(String name, int id) {
-		super();
-		this.name = name;
 		this.id = id;
 	}
 	@Override
