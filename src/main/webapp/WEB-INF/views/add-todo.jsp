@@ -1,10 +1,13 @@
 <%@ include file="../common/add-all" %>
 
 	<div class="container">
-		<h5 style="text-align: center; margin:25px;">New Action</h5>
+		<br />
+		<h3 style="margin:8px; text-align: center;">New Action</h3>
+		<hr style="width: 50%">
+		<br />
 		<form action="/add-todo.do" method="post">
 			<fieldset class="form-group">
-				<input required pattern="[a-zA-Z0-9]*" placeholder="Please type description here..." type="text" style="color: gray" name="new-todo" id="inpucik" class="elo form-control"/> <br />
+				<input required pattern="[a-z|A-Z|0-9]*" placeholder="Please type description here..." type="text" style="color: gray" name="new-todo" id="inpucik" class="elo form-control"/> <br />
 			
 				<div class="dropdown input-group mb-4">
   					<select name= "new-todo-category" class="btn btn-outline-secondary form-control dropdown-toggle" id="dropdownMenu2" 
