@@ -1,6 +1,7 @@
 <%@ include file="../common/add-all" %>
 
 	<div class="container">
+		<br />
 		<h3 style="margin:8px; text-align: center;">Welcome ${name}</h3>
 		<hr style="width: 50%">
 		<br />
