@@ -30,7 +30,7 @@
 						</c:forEach>
   					</select>
   					<div class="input-group-append">
-  						<button style="width:130px; margin-left:5px;" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Add category</button>
+  						<a type="button" style="width:130px; margin-left:5px;" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Add category</a>
   					</div> 
 				</div>
 			</fieldset>
