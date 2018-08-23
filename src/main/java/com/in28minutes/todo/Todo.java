@@ -1,20 +1,34 @@
 package com.in28minutes.todo;
 
+import com.in28minutes.priority.TodoPriority;
+
 public class Todo
 {
 	private String name;
 	private int id;
 	private String category;
 	private Boolean state;
+	private TodoPriority priority;
 	
-	public Todo(String name, int id, String category) {
+	public TodoPriority getPriority()
+	{
+		return priority;
+	}
+
+	public void setPriority(TodoPriority priority)
+	{
+		this.priority = priority;
+	}
+
+	public Todo(String name, int id, String category, TodoPriority priority) {
 		super();
 		this.name = name;
 		this.id = id;
 		this.category = category;
-		this.state =true;
+		this.state = true;
+		this.priority = priority;
 	}
-	
+
 	public String getCategory()
 	{
 		return category;
@@ -59,7 +73,8 @@ public class Todo
 	@Override
 	public String toString()
 	{
-		return "Todo [name=" + name + ", id=" + id + ", category=" + category + ", state=" + state + "]";
+		return "Todo [name=" + name + ", id=" + id + ", category=" + category + ", state=" + state + ", priority="
+				+ priority + "]";
 	}
 
 	@Override
@@ -70,6 +85,7 @@ public class Todo
 		result = prime * result + ((category == null) ? 0 : category.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((priority == null) ? 0 : priority.hashCode());
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		return result;
 	}
@@ -97,6 +113,12 @@ public class Todo
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
+			return false;
+		if (priority == null)
+		{
+			if (other.priority != null)
+				return false;
+		} else if (!priority.equals(other.priority))
 			return false;
 		if (state == null)
 		{

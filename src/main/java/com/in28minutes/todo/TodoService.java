@@ -3,6 +3,8 @@ package com.in28minutes.todo;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.in28minutes.priority.TodoPriority;
+
 public class TodoService
 {
 	private int todoID=4;
@@ -10,9 +12,9 @@ public class TodoService
 	private static List<Todo> todosForAnswer = new ArrayList<Todo>();
 
 	static {
-		todos.add(new Todo("Learn Web Application Development", 1, "Study"));
-		todos.add(new Todo("Learn Spring MVC", 2, "Study"));
-		todos.add(new Todo("Learn Rest Services", 3, "Study"));
+		todos.add(new Todo("Learn Web Application Development", 1, "Study", new TodoPriority(1)));
+		todos.add(new Todo("Learn Spring MVC", 2, "Study", new TodoPriority(2)));
+		todos.add(new Todo("Learn Rest Services", 3, "Study", new TodoPriority(4)));
 	}
 
 	public List<Todo> retriveActiveTodos(){
