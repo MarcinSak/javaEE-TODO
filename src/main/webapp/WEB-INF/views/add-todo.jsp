@@ -11,15 +11,18 @@
 				<div class="input-group mb-4">
 				
 					<input required placeholder="Please type description here..." type="text" style="color: gray" name="new-todo" id="inpucik" class="elo form-control"/> <br />
+					<input type="date" name="newTodoDate" style="margin-left: 5px;">
+					<input type="time" name="newTodoTime" style="margin-left: 2px;">
 					
 					<div class="input-group-append">
-						<select style="height:38px; width:60px; margin-left:5px;" title="Priority" name= "new-todo-priority" class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenu3" 
+						<select style="height:38px; width:60px; margin-left:10px;" title="Priority" name= "new-todo-priority" class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenu3" 
 		  							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<c:forEach items="${priorityList}" var="priority">
 								<option style="background-color: white;" class="dropdown-item">${priority.priorityLevel}</option>
 							</c:forEach>
 						</select>
 					</div>
+					
 				</div>
 				
 				<div class="dropdown input-group mb-4">

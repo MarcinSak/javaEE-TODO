@@ -1,6 +1,7 @@
 package com.in28minutes.todo;
 
 import com.in28minutes.priority.TodoPriority;
+import com.in28minutes.time.TagretTime;
 
 public class Todo
 {
@@ -9,7 +10,32 @@ public class Todo
 	private String category;
 	private Boolean state;
 	private TodoPriority priority;
-	
+	private TagretTime targetTime;
+
+
+	public Todo(String name, int id, String category, TodoPriority priority, TagretTime targetTime) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.category = category;
+		this.state = true;
+		this.priority = priority;
+		this.targetTime = targetTime;
+	}
+
+
+	public TagretTime getTargetTime()
+	{
+		return targetTime;
+	}
+
+
+	public void setTargetTime(TagretTime targetTime)
+	{
+		this.targetTime = targetTime;
+	}
+
+
 	public TodoPriority getPriority()
 	{
 		return priority;
@@ -20,14 +46,6 @@ public class Todo
 		this.priority = priority;
 	}
 
-	public Todo(String name, int id, String category, TodoPriority priority) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.category = category;
-		this.state = true;
-		this.priority = priority;
-	}
 
 	public String getCategory()
 	{
@@ -74,7 +92,7 @@ public class Todo
 	public String toString()
 	{
 		return "Todo [name=" + name + ", id=" + id + ", category=" + category + ", state=" + state + ", priority="
-				+ priority + "]";
+				+ priority + ", targetTime=" + "]";
 	}
 
 	@Override

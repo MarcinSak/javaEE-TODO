@@ -1,8 +1,10 @@
 package com.in28minutes.todo;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.in28minutes.category.CategoryService;
 import com.in28minutes.priority.TodoPriority;
 import com.in28minutes.priority.TodoPriorityService;
-import com.in28minutes.todo.TodoService;
+import com.in28minutes.time.TagretTime;
 
 @WebServlet(urlPatterns = "/add-todo.do")
 public class AddTodoServlet extends HttpServlet
@@ -20,8 +22,7 @@ public class AddTodoServlet extends HttpServlet
 	private TodoService todoService = new TodoService();
 	private CategoryService categoryService = new CategoryService();
 	private TodoPriorityService todoPriorityService = new TodoPriorityService();
-	private static String priorityLevel;
-//	salary
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
@@ -33,15 +34,22 @@ public class AddTodoServlet extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		System.out.println("salary -> " + request.getParameter("salary"));
-
 		String action = request.getParameter("action");
 
 		if(action.equals("Add")) {
 			String newTodoDescription = request.getParameter("new-todo");
 			String newTodoCategory = request.getParameter("new-todo-category");
+			
+			//date & time
+			String dateTodo ="", timeTodo="";
+			dateTodo = request.getParameter("newTodoDate");
+			timeTodo = request.getParameter("newTodoTime");
+			System.out.println("dateTodo  ->  " + dateTodo);
+			System.out.println("timeTodo  ->" + timeTodo + "<");
+			System.out.println();
+			
 			int netTodoPriority = Integer.parseInt(request.getParameter("new-todo-priority"));
-			if(!todoService.addTodo(new Todo(newTodoDescription, todoService.nextID(), newTodoCategory, new TodoPriority(netTodoPriority))))
+			if(!todoService.addTodo(new Todo(newTodoDescription, todoService.nextID(), newTodoCategory, new TodoPriority(netTodoPriority), new TagretTime(dateTodo, timeTodo))))
 				request.setAttribute("AddTodoErrorMessage", "Nie dodano nowego zadania");
 			else
 				request.setAttribute("AddTodoErrorMessage", "");

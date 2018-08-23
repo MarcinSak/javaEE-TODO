@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.in28minutes.priority.TodoPriority;
+import com.in28minutes.time.TagretTime;
 
 public class TodoService
 {
@@ -12,17 +13,17 @@ public class TodoService
 	private static List<Todo> todosForAnswer = new ArrayList<Todo>();
 
 	static {
-		todos.add(new Todo("Learn Web Application Development", 1, "Study", new TodoPriority(1)));
-		todos.add(new Todo("Learn Spring MVC", 2, "Study", new TodoPriority(2)));
-		todos.add(new Todo("Learn Rest Services", 3, "Study", new TodoPriority(4)));
+		todos.add(new Todo("Learn Web Application Development", 1, "Study", new TodoPriority(1), new TagretTime("", "12:12")));
+		todos.add(new Todo("Learn Spring MVC", 2, "Study", new TodoPriority(2), new TagretTime("","")));
+		todos.add(new Todo("Learn Rest Services", 3, "Study", new TodoPriority(4), new TagretTime("","")));
 	}
 
 	public List<Todo> retriveActiveTodos(){
 		todosForAnswer.clear();
-		for(Todo todo: todos) {
+		for(Todo todo: todos) 
 			if(todo.getState() == true)
 				todosForAnswer.add(todo);
-		}
+
 		return todosForAnswer;
 	}
 	
