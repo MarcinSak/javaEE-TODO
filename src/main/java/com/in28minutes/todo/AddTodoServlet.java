@@ -40,9 +40,9 @@ public class AddTodoServlet extends HttpServlet
 		if(action.equals("Add")) {
 			String newTodoDescription = request.getParameter("new-todo");
 			String newTodoCategory = request.getParameter("new-todo-category");
-			String netTodoPriority = request.getParameter("new-todo-priority");
+			int netTodoPriority = Integer.parseInt(request.getParameter("new-todo-priority"));
 			System.out.println("netTodoPriority   --->   " + netTodoPriority);
-			if(!todoService.addTodo(new Todo(newTodoDescription, todoService.nextID(), newTodoCategory, new TodoPriority(1))))
+			if(!todoService.addTodo(new Todo(newTodoDescription, todoService.nextID(), newTodoCategory, new TodoPriority(netTodoPriority))))
 				request.setAttribute("AddTodoErrorMessage", "Nie dodano nowego zadania");
 			else
 				request.setAttribute("AddTodoErrorMessage", "");

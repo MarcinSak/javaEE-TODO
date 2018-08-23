@@ -12,6 +12,7 @@
 				<th>#</th>
 				<th>Descripton</th>
 				<th>Category</th>
+				<th>Priority</th>
 				<th style="text-align: center;">Action</th>
 			</thead>
 			<tbody>
@@ -20,6 +21,7 @@
 						<td></td>
 						<td>${todo.name}</td>
 						<td>${todo.category}</td>
+						<td>${todo.priority.priorityLevel}</td>
 						<td style="" align="right">
 							<a class="btn btn-outline-success" href="/done-todo.do?id-todo=${todo.id}">done</a>
 							<a class="btn btn-outline-danger" href="/delete-todo.do?id-todo=${todo.id}">Delete</a>
