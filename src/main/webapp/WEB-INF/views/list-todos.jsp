@@ -24,7 +24,8 @@
 						<td>${todo.category}</td>
 						<td style="max-width: 100px;" >${todo.targetTime.date} &nbsp;&nbsp;&nbsp;&nbsp; ${todo.targetTime.time}</td>
 						<td style="text-align: center;">${todo.priority.priorityLevel}</td>
-						<td style="max-width: 100px" align="center">
+						<td style="max-width: 130px" align="center">
+							<a class="btn btn-outline-warning" href="/edit-todo.do?id-todo=${todo.id}">Edit</a>
 							<a class="btn btn-outline-success" href="/done-todo.do?id-todo=${todo.id}">Done</a>
 							<a class="btn btn-outline-danger" href="/delete-todo.do?id-todo=${todo.id}">Delete</a>
 						</td>

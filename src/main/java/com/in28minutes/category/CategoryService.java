@@ -12,8 +12,8 @@ public class CategoryService implements CategoryServiceInterface
 	
 	static {
 		categoryList.add(new Category("root", 0));
-		categoryList.add(new Category("study", 1, 0));
-		categoryList.add(new Category("work", 2, 0));
+		categoryList.add(new Category("Study", 1, 0));
+		categoryList.add(new Category("Work", 2, 0));
 	}
 	
 	public int giveMeID(String sd) {
