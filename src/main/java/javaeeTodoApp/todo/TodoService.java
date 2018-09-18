@@ -1,10 +1,10 @@
-package com.in28minutes.todo;
+package javaeeTodoApp.todo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.in28minutes.priority.TodoPriority;
-import com.in28minutes.time.TagretTime;
+import javaeeTodoApp.priority.TodoPriority;
+import javaeeTodoApp.time.TagretTime;
 
 public class TodoService
 {

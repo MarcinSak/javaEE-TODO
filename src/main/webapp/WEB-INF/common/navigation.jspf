@@ -9,7 +9,7 @@
 				<a class="nav-link" href="/list-todos.do">Todos</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://www.in28minutes.com">In28Minutes</a>
+				<a class="nav-link" href="https://github.com/MarcinSak/javaEE-TODO.git">javaEE-TODO</a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

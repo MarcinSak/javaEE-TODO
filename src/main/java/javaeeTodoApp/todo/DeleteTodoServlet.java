@@ -1,4 +1,4 @@
-package com.in28minutes.loguut;
+package javaeeTodoApp.todo;
 
 import java.io.IOException;
 
@@ -8,15 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.in28minutes.todo.TodoService;
+import javaeeTodoApp.todo.TodoService;
 
-@WebServlet(urlPatterns = "/logout.do")
-public class LoginServlet extends HttpServlet
+@WebServlet(urlPatterns = "/delete-todo.do")
+public class DeleteTodoServlet extends HttpServlet
 {
+	private TodoService todoService = new TodoService();
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		request.getSession().invalidate();
-		request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+		todoService.deleteTodo(Integer.parseInt(request.getParameter("id-todo")));
+		response.sendRedirect("/list-todos.do");
+		
 	}
 }

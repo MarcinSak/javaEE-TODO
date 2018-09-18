@@ -1,4 +1,4 @@
-package com.in28minutes.login;
+package javaeeTodoApp.login;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.in28minutes.todo.TodoService;
-import com.in28minutes.users.UserService;
+import javaeeTodoApp.todo.TodoService;
+import javaeeTodoApp.users.UserService;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LogoutServlet extends HttpServlet

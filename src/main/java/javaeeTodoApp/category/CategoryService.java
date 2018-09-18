@@ -1,4 +1,4 @@
-package com.in28minutes.category;
+package javaeeTodoApp.category;
 
 import java.util.ArrayList;
 import java.util.HashMap;

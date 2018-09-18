@@ -1,4 +1,4 @@
-package com.in28minutes.todo;
+package javaeeTodoApp.todo;
 
 import java.io.IOException;
 

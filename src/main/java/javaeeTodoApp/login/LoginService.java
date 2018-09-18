@@ -1,6 +1,6 @@
-package com.in28minutes.login;
+package javaeeTodoApp.login;
 
-import com.in28minutes.users.UserService;
+import javaeeTodoApp.users.UserService;
 
 public class LoginService
 {

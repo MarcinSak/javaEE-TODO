@@ -1,4 +1,4 @@
-package com.in28minutes.category;
+package javaeeTodoApp.category;
 
 public class Category
 {

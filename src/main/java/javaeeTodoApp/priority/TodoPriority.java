@@ -1,4 +1,4 @@
-package com.in28minutes.priority;
+package javaeeTodoApp.priority;
 
 
 public class TodoPriority

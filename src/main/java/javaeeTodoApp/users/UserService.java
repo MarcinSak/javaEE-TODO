@@ -1,4 +1,4 @@
-package com.in28minutes.users;
+package javaeeTodoApp.users;
 
 import java.util.HashMap;
 

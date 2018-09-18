@@ -1,4 +1,4 @@
-package com.in28minutes.todo;
+package javaeeTodoApp.todo;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.in28minutes.category.CategoryService;
-import com.in28minutes.priority.TodoPriority;
-import com.in28minutes.priority.TodoPriorityService;
-import com.in28minutes.time.TagretTime;
+import javaeeTodoApp.category.CategoryService;
+import javaeeTodoApp.priority.TodoPriority;
+import javaeeTodoApp.priority.TodoPriorityService;
+import javaeeTodoApp.time.TagretTime;
 
 @WebServlet(urlPatterns = "/add-todo.do")
 public class AddTodoServlet extends HttpServlet

@@ -1,4 +1,4 @@
-package com.in28minutes.users;
+package javaeeTodoApp.users;
 
 public class User
 {

@@ -1,4 +1,4 @@
-package com.in28minutes.category;
+package javaeeTodoApp.category;
 
 import java.io.IOException;
 

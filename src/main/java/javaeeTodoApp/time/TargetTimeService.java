@@ -1,4 +1,4 @@
-package com.in28minutes.time;
+package javaeeTodoApp.time;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
